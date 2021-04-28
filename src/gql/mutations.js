@@ -11,18 +11,19 @@ export const REGISTER_USER = gql`
     registerUser(
       newUser: {
         username: $username
-        email: $email
         password: $password
         firstName: $firstName
         lastName: $lastName
+        email: $email
       }
     ) {
       token
       user {
         _id
-        email
-        lastName
         username
+        firstName
+        lastName
+        email
       }
     }
   }

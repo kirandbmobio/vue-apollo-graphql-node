@@ -17,6 +17,10 @@ export default {
     Navbar,
     Footer,
   },
+  async mounted() {
+    console.log("123");
+    await this.$store.dispatch("Auth/getAuthUser");
+  },
 };
 </script>
 

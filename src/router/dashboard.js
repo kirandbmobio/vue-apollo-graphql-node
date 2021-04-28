@@ -1,5 +1,5 @@
 import DashboardView from "@/views/Dashboard/Index.vue";
-
+import store from "../store";
 export default {
   path: "/dashboard",
   name: "dashboard",
@@ -15,6 +15,14 @@ export default {
       path: "posts",
       name: "Posts",
       component: () => import("@/views/Dashboard/Posts.vue"),
+    },
+    {
+      path: "logout",
+      name: "logout",
+      beforeEnter: (to, from, next) => {
+        store.dispatch("Auth/logoutUser");
+        next("/auth/login");
+      },
     },
   ],
 };

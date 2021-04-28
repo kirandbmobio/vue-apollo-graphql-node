@@ -104,11 +104,11 @@ export default {
   data() {
     return {
       user: {
-        email: "",
         username: "",
         password: "",
-        lastName: "",
         firstName: "",
+        lastName: "",
+        email: "",
       },
     };
   },

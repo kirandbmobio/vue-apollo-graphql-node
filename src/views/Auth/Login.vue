@@ -57,6 +57,7 @@
 </template>
 
 <script>
+import { mapActions } from "vuex";
 export default {
   data() {
     return {
@@ -67,8 +68,9 @@ export default {
     };
   },
   methods: {
-    loginUser() {
-      console.log("user", this.user);
+    ...mapActions({ login: "Auth/loginUser" }),
+    async loginUser() {
+      await this.login(this.user);
     },
   },
 };
